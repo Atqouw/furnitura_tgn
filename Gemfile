@@ -9,13 +9,17 @@ gem 'uglifier', '>= 1.3.0'                                         # Use Uglifie
 gem 'jquery-rails'                                                 # A gem to automate using jQuery with Rails.
 gem 'sass-rails', '~> 5.0'                                         # Use SCSS for stylesheets.
 gem 'turbolinks', '~> 5'                                           # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks.
+gem 'jquery-turbolinks'
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]      # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 
-gem 'bootsnap', '>= 1.1.0', require: false                         # Bootstrap 4 Ruby Gem for Rails / Sprockets and Compass.
+gem 'semantic-ui-sass'                                             # Semantic UI, converted to Sass and ready to drop into Rails & Compass.
+gem 'bootsnap', '>= 1.1.0', require: false                         # Bootsnap for rails
 gem 'coffee-rails', '~> 4.2'                                       # Use CoffeeScript for .coffee assets and views
 gem 'andand'                                                       # Maybe Monad in idiomatic Ruby.
 gem 'devise'                                                       # Token based authentication for Rails JSON APIs. Designed to work with jToker and ng-token-users_auth.
+gem 'cancancan'                                                    # The authorization Gem for Ruby on Rails.
+gem 'haml-rails'                                                   # Haml-rails provides Haml generators for Rails 4
 
 group :development do
   gem 'awesome_print', require: 'ap'                               # Pretty print your Ruby objects with style -- in full color and with proper indentation
