@@ -1,4 +1,4 @@
-namespace :admin_users do
+namespace :users do
 
   desc 'Create Admin Users'
   task create: :environment do
