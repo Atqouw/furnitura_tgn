@@ -7,25 +7,58 @@
 # Ignore bundler config.
 /.bundle
 
-# Ignore the default SQLite database.
-/db/*.sqlite3
-/db/*.sqlite3-journal
-
 # Ignore all logfiles and tempfiles.
 /log/*
-/tmp/*
 !/log/.keep
-!/tmp/.keep
+/tmp
 
-# Ignore uploaded files in development
-/storage/*
-!/storage/.keep
 
-/node_modules
-/yarn-error.log
+#### custom configs for gitignore
 
-/public/assets
-.byebug_history
+/public/sitemaps/
 
-# Ignore master key for decrypting credentials and more.
-/config/master.key
+# Meta Data RubyMine
+/.idea
+
+# Database
+/config/database.yml
+
+# RVM config file
+/.rvmrc
+
+# MAC OS X folder metadata
+*.DS_Store
+
+# Shards config file
+/config/shards.yml
+
+# Redis dump
+/dump.rdb
+
+# joe`s backups
+*~
+
+# Uploaded Files && Compiled Assets
+/public/assets/
+/public/uploads/
+/public/tmp/
+
+#Aptana project metadata
+/.project
+
+# Tests coverage
+/coverage
+
+# Ignore Ruby versions
+.rbenv
+.ruby-version
+
+# rvm gemset name
+.ruby-gemset
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml
+
+# Ignore application configuration
+/config/application.yml
+/urbanairship.log
