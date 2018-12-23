@@ -10,7 +10,6 @@ class Application.Core
     @initializePlugins()
     @bindClasses()
     @afterRenderPageAlertInit()
-    @burgerMenu()
     Turbolinks.clearCache()
 
   afterRenderPageAlertInit: =>
@@ -23,10 +22,13 @@ class Application.Core
         new Application.Classes[className]($(el))
 
   initializePlugins: ($scope = $('body')) =>
-#    @initializeTextFields($scope)
+    @initializeDropdown($scope)
+    @initializeSidebar($scope)
 
 
+  initializeDropdown: ( $scope = $('body') ) =>
+    $scope.find('.dropdown').dropdown()
 
-  burgerMenu: =>
-    $('#toggle').click ->
+  initializeSidebar: ( $scope = $('body') ) =>
+    $('#toggle_sidebar_size').click ->
       $('.ui.sidebar').sidebar(overlay: true).sidebar 'toggle'

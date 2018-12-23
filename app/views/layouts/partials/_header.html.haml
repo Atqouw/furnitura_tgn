@@ -1,25 +1,57 @@
-
-
-
-
-.ui.container
-  .ui.secondary.pointing.menu
-    %a.toc.item#toggle
+.ui.secondary.pointing.menu
+  .ui.container
+    %a.toc.item#toggle_sidebar_size
       %i.sidebar.icon
-    %a.item.vanishing PageLink
-    %a.item.vanishing PageLink
-    %a.item.vanishing PageLink
-    %a.item.vanishing PageLink
+
+    = link_to('ЛОГОТИП', root_path, class: 'item')
+
+    .ui.pointing.dropdown.link.item.vanishing
+      %span.text Категории
+      %i.dropdown.icon
+      .menu
+        .ui.icon.search.input
+          %i.search.icon
+          %input{placeholder: 'Поиск категорий', type: :text}
+        - @categories.find_each do |category|
+
+          = link_to(category_items_path(category), class: 'item') do
+            %span.description= category.items.count
+            %span.text= category.name
+        .divider
+        .header Не нашли нужного товара?
+        = link_to('Оставьте заявку', 'javascript:void(0)', class: 'item')
+
+
+    = link_to('Контакты', 'javascript:void(0)', class: 'item vanishing')
+    = link_to('Отзывы', 'javascript:void(0)', class: 'item vanishing')
+    = link_to('Акции', 'javascript:void(0)', class: 'item vanishing')
+
     .right.menu
+      .item.vanishing
+        пн-суб. 10:00-20:00
       .item
-        %a.ui.button Log in
-      .item
-        %a.ui.button Sign Up
+        тел.: 8(988)444-04-94
+
+      - if current_user.present?
+        .ui.pointing.dropdown.link.item
+          %span.text= [current_user.first_name, current_user.first_name].join(' ')
+          %i.dropdown.icon
+          .menu
+            = link_to('ВЫХОД', destroy_user_session_path, method: :delete, class: 'item')
+      - else
+        .ui.pointing.dropdown.link.item
+          %span.text Вход
+          %i.dropdown.icon
+          .menu
+            = link_to('ВХОД', new_user_session_path, class: 'item')
+            .divider
+            = link_to('РЕГИСТРАЦИЯ', new_user_registration_path, class: 'item')
+
 
 
 .ui.vertical.sidebar.menu
   %a.item Home
-  %a.item PageLink
+  %a.item PageLink1
   %a.item PageLink
   %a.item PageLink
   %a.item PageLink

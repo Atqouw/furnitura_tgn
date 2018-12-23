@@ -1,10 +1,8 @@
-class SurveyPagesController < WebApplicationController
+class ItemsController < WebApplicationController
 
   load_and_authorize_resource :item
 
-  def index
-
-  end
+  def index; end
 
   private
 
