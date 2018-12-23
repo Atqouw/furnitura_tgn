@@ -18,6 +18,7 @@
 /public/sitemaps/
 
 # Meta Data RubyMine
+/.idea
 
 # Database
 /config/database.yml
