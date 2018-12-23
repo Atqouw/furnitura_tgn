@@ -28,7 +28,8 @@ ActiveRecord::Schema.define(version: 2018_12_16_143752) do
   end
 
   create_table "items", force: :cascade do |t|
-    t.string "item"
+    t.string "name", null: false
+    t.string "description"
   end
 
   create_table "users", force: :cascade do |t|
