@@ -10,6 +10,7 @@ class Application.Core
     @initializePlugins()
     @bindClasses()
     @afterRenderPageAlertInit()
+    @burgerMenu()
     Turbolinks.clearCache()
 
   afterRenderPageAlertInit: =>
@@ -24,3 +25,8 @@ class Application.Core
   initializePlugins: ($scope = $('body')) =>
 #    @initializeTextFields($scope)
 
+
+
+  burgerMenu: =>
+    $('#toggle').click ->
+      $('.ui.sidebar').sidebar(overlay: true).sidebar 'toggle'
