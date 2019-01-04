@@ -40,14 +40,12 @@
             = link_to('ВЫХОД', destroy_user_session_path, method: :delete, class: 'item')
       - else
         .ui.pointing.dropdown.link.item
-          %span.text Вход
+          %span.text= params[:controller].eql?('devise/registrations') ? 'Регистрация' : 'Вход'
           %i.dropdown.icon
           .menu
             = link_to('ВХОД', new_user_session_path, class: 'item')
             .divider
             = link_to('РЕГИСТРАЦИЯ', new_user_registration_path, class: 'item')
-
-
 
 .ui.vertical.sidebar.menu
   %a.item Home
