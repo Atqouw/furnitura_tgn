@@ -20,6 +20,12 @@ gem 'andand'                                                       # Maybe Monad
 gem 'devise'                                                       # Token based authentication for Rails JSON APIs. Designed to work with jToker and ng-token-users_auth.
 gem 'cancancan'                                                    # The authorization Gem for Ruby on Rails.
 gem 'haml-rails'                                                   # Haml-rails provides Haml generators for Rails 4
+gem 'money-rails'                                                  # This library provides integration of the money gem with Rails.
+gem 'faker',
+    git: 'https://github.com/stympy/faker.git',
+    branch: 'master'                                               # A library for generating fake data such as names, addresses, and phone numbers.
+gem 'carrierwave'                                                  # This gem provides a simple and extremely flexible way to upload files from Ruby applications. It works well with Rack based web applications, such as Ruby on Rails.
+gem 'mini_magick'                                                  # A ruby wrapper for ImageMagick or GraphicsMagick command line.
 
 group :development do
   gem 'awesome_print', require: 'ap'                               # Pretty print your Ruby objects with style -- in full color and with proper indentation

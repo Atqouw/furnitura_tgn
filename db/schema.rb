@@ -10,19 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_16_143752) do
+ActiveRecord::Schema.define(version: 2019_01_04_202035) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "attachments", force: :cascade do |t|
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string "name", null: false
     t.string "code", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "categories_items", force: :cascade do |t|
     t.bigint "category_id", null: false
     t.bigint "item_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_categories_items_on_category_id"
     t.index ["item_id"], name: "index_categories_items_on_item_id"
   end
@@ -30,6 +37,12 @@ ActiveRecord::Schema.define(version: 2018_12_16_143752) do
   create_table "items", force: :cascade do |t|
     t.string "name", null: false
     t.string "description"
+    t.integer "sale_price_cents", default: 0, null: false
+    t.string "sale_price_currency", default: "RUB", null: false
+    t.float "discount_percent"
+    t.boolean "is_sell_out", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
