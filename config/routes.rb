@@ -8,5 +8,5 @@ Rails.application.routes.draw do
     resources :items
   end
 
-  root 'application#home'
+  root 'items#index'
 end

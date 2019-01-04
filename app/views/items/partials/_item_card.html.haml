@@ -1,0 +1,20 @@
+.card
+  .image
+    = image_tag(item_card.photo.url)
+  .content
+    = link_to(item_card.name, item_path(item_card), class: 'header')
+    -#.meta
+    -#  %span.date Created in Sep 2014
+    .description
+      %p= item_card.description
+      - if item_card.discount_percent.present?
+        %h4
+          %s= humanized_money_with_symbol(item_card.sale_price)
+          .ui.green.label= humanized_money_with_symbol(item_card.price_with_discount)
+      - else
+        %h4.ui.green.label= humanized_money_with_symbol(item_card.sale_price)
+
+  .extra.content
+    .ui.two.buttons
+      .ui.basic.green.button Добавить в корзину
+      .ui.basic.red.button Купить сейчас

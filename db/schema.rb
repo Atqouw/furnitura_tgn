@@ -16,6 +16,12 @@ ActiveRecord::Schema.define(version: 2019_01_04_202035) do
   enable_extension "plpgsql"
 
   create_table "attachments", force: :cascade do |t|
+    t.string "attachable_type"
+    t.bigint "attachable_id"
+    t.string "attach", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["attachable_type", "attachable_id"], name: "index_attachments_on_attachable_type_and_attachable_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -37,6 +43,7 @@ ActiveRecord::Schema.define(version: 2019_01_04_202035) do
   create_table "items", force: :cascade do |t|
     t.string "name", null: false
     t.string "description"
+    t.string "photo"
     t.integer "sale_price_cents", default: 0, null: false
     t.string "sale_price_currency", default: "RUB", null: false
     t.float "discount_percent"

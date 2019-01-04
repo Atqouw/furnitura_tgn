@@ -8,4 +8,8 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     = render partial: ('layouts/partials/header')
-    = yield
+    .ui.container
+      = yield
+    .ui.fixed.bottom.sticky
+      .ui.yellow.segment
+        %p КОРЗИНА

@@ -24,6 +24,7 @@ class Ability
 
   def guest_permissions(user)
     can :read, Item
+    can :read, Category
   end
 
 end

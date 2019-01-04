@@ -24,7 +24,7 @@
 
     = link_to('Контакты', 'javascript:void(0)', class: 'item vanishing')
     = link_to('Отзывы', 'javascript:void(0)', class: 'item vanishing')
-    = link_to('Акции', 'javascript:void(0)', class: 'item vanishing')
+    = link_to('Акции', items_path({is_sell_out: true}), class: 'item vanishing')
 
     .right.menu
       .item.vanishing
