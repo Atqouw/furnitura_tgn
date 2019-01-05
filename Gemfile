@@ -29,6 +29,10 @@ gem 'mini_magick'                                                  # A ruby wrap
 gem 'simple_form'
 gem 'kaminari'                                                     # A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for modern web app frameworks and ORMs
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-swiper'
+end
+
 group :development do
   gem 'awesome_print', require: 'ap'                               # Pretty print your Ruby objects with style -- in full color and with proper indentation
 end

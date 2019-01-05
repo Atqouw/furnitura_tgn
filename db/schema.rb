@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2019_01_04_202035) do
     t.string "sale_price_currency", default: "RUB", null: false
     t.float "discount_percent"
     t.boolean "is_sell_out", default: false, null: false
+    t.boolean "is_show_on_main_slider", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

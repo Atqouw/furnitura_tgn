@@ -5,3 +5,4 @@
 #= require ./compatibility
 
 #= require semantic-ui
+#= require swiper

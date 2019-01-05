@@ -24,6 +24,7 @@ class Application.Core
   initializePlugins: ($scope = $('body')) =>
     @initializeDropdown($scope)
     @initializeSidebar($scope)
+    @initializeSwiper($scope)
 
 
   initializeDropdown: ( $scope = $('body') ) =>
@@ -32,3 +33,17 @@ class Application.Core
   initializeSidebar: ( $scope = $('body') ) =>
     $('#toggle_sidebar_size').click ->
       $('.ui.sidebar').sidebar(overlay: true).sidebar 'toggle'
+
+  initializeSwiper: ( $scope = $('body') ) =>
+    new Swiper('.swiper-container',
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+      },
+      loop: true,
+      autoplay: true
+    )
+

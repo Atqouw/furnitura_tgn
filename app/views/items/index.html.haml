@@ -1,3 +1,9 @@
-.ui.four.cards
-  = render(partial: 'items/partials/item_card', collection: @items)
-= paginate(@items, theme: 'default')
+.ui.container
+  %h2.ui.dividing.header
+    - if @category.present?
+      = @category.name
+    - else
+      = params[:is_sell_out].present? ? 'Акции' : 'Все товары'
+  .ui.four.doubling.cards
+    = render(partial: 'items/partials/item_card', collection: @items)
+  = paginate(@items, theme: 'default')

@@ -10,6 +10,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
     t.float :discount_percent
 
     t.boolean :is_sell_out, null: false, default: false
+    t.boolean :is_show_on_main_slider, null: false, default: false
 
     t.timestamps null: false
   end

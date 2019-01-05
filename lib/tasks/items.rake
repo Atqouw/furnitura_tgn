@@ -20,6 +20,7 @@ namespace :items do
     if is_sell_out
       item.discount_percent = [*1..60].sample
       item.is_sell_out = [true, false].sample
+      item.is_show_on_main_slider = [true, false].sample
     end
 
     item.save
