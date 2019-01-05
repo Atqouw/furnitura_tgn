@@ -9,5 +9,7 @@ Rails.application.routes.draw do
     resources :items
   end
 
-  root 'items#index'
+  # root 'items#index'
+  root 'application#home'
+
 end

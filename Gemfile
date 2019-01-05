@@ -27,6 +27,7 @@ gem 'faker',
 gem 'carrierwave'                                                  # This gem provides a simple and extremely flexible way to upload files from Ruby applications. It works well with Rack based web applications, such as Ruby on Rails.
 gem 'mini_magick'                                                  # A ruby wrapper for ImageMagick or GraphicsMagick command line.
 gem 'simple_form'
+gem 'kaminari'                                                     # A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for modern web app frameworks and ORMs
 
 group :development do
   gem 'awesome_print', require: 'ap'                               # Pretty print your Ruby objects with style -- in full color and with proper indentation

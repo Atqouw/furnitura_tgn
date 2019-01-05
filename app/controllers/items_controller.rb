@@ -5,9 +5,8 @@ class ItemsController < WebApplicationController
 
 
   def index
-    if params[:is_sell_out].present?
-      @items = @items.where(is_sell_out: true)
-    end
+    @items = @items.where(is_sell_out: true) if params[:is_sell_out].present?
+    @items = @items.page(params[:page]).per(12)
   end
 
   def show; end
