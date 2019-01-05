@@ -9,6 +9,10 @@ Rails.application.routes.draw do
     resources :items
   end
 
+  resources :orders do
+    post :add_item_to_order, on: :collection
+  end
+
   # root 'items#index'
   root 'application#home'
 

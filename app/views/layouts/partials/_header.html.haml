@@ -12,6 +12,9 @@
         .ui.icon.search.input
           %i.search.icon
           %input{placeholder: 'Поиск категорий', type: :text}
+        = link_to(root_path, class: 'item') do
+          %span.description= @items_size
+          %span.text Все товары
         - @categories.find_each do |category|
 
           = link_to(category_items_path(category), class: 'item') do

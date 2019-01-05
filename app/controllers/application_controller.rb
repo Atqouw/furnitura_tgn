@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
 
   def determine_categories
     @categories = Category.all
+    @items_size = Item.count
   end
 
 end

@@ -14,11 +14,6 @@
       - else
         %h4.ui.green.label= humanized_money_with_symbol(item_card.sale_price)
 
-  -#.extra.content
-  -#  .ui.two.buttons
-  -#    .ui.basic.green.button Добавить в корзину
-  -#    .ui.basic.red.button Купить сейчас
-
-  .ui.two.bottom.attached.buttons
-    .ui.basic.green.button Добавить в корзину
-    .ui.basic.orange.button Купить сейчас
+  .ui.two.bottom.attached.buttons{data: {'class-binder': 'OrderButtons', 'item-id': item_card.id}}
+    = link_to('Добавить в корзину', 'javascript:void(0)', class: 'ui basic green button', data: { 'add-to-order': true })
+    = link_to('Купить сейчас', 'javascript:void(0)', class: 'ui basic orange button')

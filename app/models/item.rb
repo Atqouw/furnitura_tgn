@@ -7,6 +7,9 @@ class Item < ApplicationRecord
   has_many :categories_items, dependent: :destroy
   has_many :categories, through: :categories_items
 
+  has_many :items_orders, dependent: :destroy
+  has_many :orders, through: :items_orders
+
   has_many :attachments, as: :attachable
 
   accepts_nested_attributes_for :categories_items, reject_if: :all_blank, allow_destroy: true
