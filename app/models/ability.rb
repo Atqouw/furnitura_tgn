@@ -16,10 +16,12 @@ class Ability
 
   def admin_permissions(user)
     can :manage, :all
+    can :manage, User, id: user.id
   end
 
   def member_permissions(member)
     guest_permissions(member)
+    can :manage, User, id: user.id
   end
 
   def guest_permissions(user)

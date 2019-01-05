@@ -26,6 +26,7 @@ gem 'faker',
     branch: 'master'                                               # A library for generating fake data such as names, addresses, and phone numbers.
 gem 'carrierwave'                                                  # This gem provides a simple and extremely flexible way to upload files from Ruby applications. It works well with Rack based web applications, such as Ruby on Rails.
 gem 'mini_magick'                                                  # A ruby wrapper for ImageMagick or GraphicsMagick command line.
+gem 'simple_form'
 
 group :development do
   gem 'awesome_print', require: 'ap'                               # Pretty print your Ruby objects with style -- in full color and with proper indentation

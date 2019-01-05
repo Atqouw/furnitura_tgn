@@ -32,13 +32,15 @@
       .item
         тел.: 8(988)444-04-94
 
-      - if current_user.present?
+      - if user_signed_in?
         .ui.pointing.dropdown.link.item
-          %span.text= [current_user.first_name, current_user.first_name].join(' ')
+          %span.text= [current_user.first_name, current_user.last_name].join(' ')
           %i.dropdown.icon
           .menu
+            = link_to('НАСТРОЙКИ', edit_user_path(current_user), class: 'item')
+            .divider
             = link_to('ВЫХОД', destroy_user_session_path, method: :delete, class: 'item')
-      - else
+      -#- else
         .ui.pointing.dropdown.link.item
           %span.text= params[:controller].eql?('devise/registrations') ? 'Регистрация' : 'Вход'
           %i.dropdown.icon
@@ -54,6 +56,7 @@
   %a.item PageLink
   %a.item PageLink
   %a.item PageLink
+
 
 
 

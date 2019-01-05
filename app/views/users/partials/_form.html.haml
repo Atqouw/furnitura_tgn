@@ -1,0 +1,10 @@
+= simple_form_for(@user, remote: true) do |f|
+  .ui.stacked.segment
+    .ui.form
+      .field
+        = f.input :first_name
+      .field
+        = f.input :last_name
+      .field
+        = f.input :email
+  = f.button :submit, class:'ui fluid large teal submit button'
