@@ -1,6 +1,13 @@
-.card
+.card{id: "item-#{item_card.id}"}
   .image
     = image_tag(item_card.photo.url)
+    - if can? :edit, item_card
+      .ui.top.right.attached.label
+        .ui.icon.dropdown
+          %i.wrench.icon
+          .menu
+            = link_to 'Редактировать', edit_item_path(item_card), class:'item'
+            = link_to 'Удалить', item_path(item_card), method: :delete, remote: true, class: 'item destroy_remote'
   .content
     = link_to(item_card.name, item_path(item_card), class: 'header')
     -#.meta
