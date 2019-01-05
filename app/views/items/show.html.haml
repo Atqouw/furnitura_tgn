@@ -1,5 +1,21 @@
-.ui.grid
-  .four.wide.column
-  .twelve.wide.column
-    %h4.ui.header
-      = @item.name
+.ui.piled.segment
+  .ui.middle.aligned.stackable.grid.container
+    .row
+      .center.aligned.wide.column
+        %h3.ui.header
+          = @item.name
+        .ui.centered.image
+          .center.aligned
+            = image_tag(@item.photo.url)
+        %p.description
+          Характеристики:
+          = @item.description
+        .center.aligned.column
+          - if @item.discount_percent.present?
+            %h4
+              %s= humanized_money_with_symbol(@item.sale_price)
+              .ui.green.label= humanized_money_with_symbol(@item.price_with_discount)
+          - else
+            %h4.ui.green.label= humanized_money_with_symbol(@item.sale_price)
+          .ui.basic.green.button Добавить в корзину
+          .ui.basic.orange.button Купить сейчас
