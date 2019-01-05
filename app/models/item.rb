@@ -12,6 +12,8 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :categories_items, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :attachments, reject_if: :all_blank, allow_destroy: true
 
+  validates :name, presence: true
+
   def price_with_discount
     return sale_price if discount_percent.blank?
     Money.new(sale_price.cents - (sale_price.cents * discount_percent / 100))

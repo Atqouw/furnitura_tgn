@@ -9,13 +9,35 @@ class ItemsController < WebApplicationController
     @items = @items.page(params[:page]).per(12)
   end
 
+  def new
+    @item = Item.new
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    if @item.update_attributes(item_params)
+      redirect_to @item
+    else
+      redirect_to :edit
+    end
+  end
+
+  def create
+    @item = Item.new(item_params)
+    if @item.save
+      redirect_to @item
+    else
+      redirect_to :new
+    end
+  end
+
   def show; end
 
   private
 
   def item_params
     params.fetch(:item, {}).permit(
-        :title,
+        :name,
         :description,
         :show_survey_title,
         :show_survey_description

@@ -1,0 +1,19 @@
+
+.ui.middle.aligned.center.aligned.grid
+  .column.maxwidth
+    %h2.ui.teal.image.header
+      .content
+        Add new item
+      .ui.stacked.segment
+        .ui.form
+          = simple_form_for(@item, remote: true) do |f|
+            .field
+              = f.input :name, placeholder:'Item Name'
+            .field
+              = f.input :description, placeholder:'Description'
+            .field
+              = f.input :sale_price_cents
+            .field
+              = f.input :photo, placeholder:'Photo'
+            .field
+              = f.button :submit, class:'ui button'
