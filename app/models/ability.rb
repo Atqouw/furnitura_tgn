@@ -29,6 +29,7 @@ class Ability
     can :read, Category
     can :add_item_to_order, Order
     can :read, Order
+    can :destroy, Order
   end
 
 end

@@ -1,1 +1,3 @@
 localStorage.setItem('currentOrderToken', '<%= @order.token %>')
+
+$('#cart-content').replaceWith("<%= j( render partial: 'layouts/partials/cart', locals: { order: @order }) %>")

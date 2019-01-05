@@ -1,0 +1,23 @@
+#cart-content.ui.fixed.bottom.sticky{style: 'width: 100%;', data: { 'current-order-token': order.andand.token }}
+  .ui.inverted.vertical.footer.segment{style: 'margin: 0 !important;'}
+    .ui.aligned.container
+      .ui.stackable.inverted.divided.grid
+        .three.wide.column.center.aligned
+          %button.mini.ui.red.button Обратная связь
+        .thirteen.wide.column.right.aligned
+          %i.shopping.cart.icon
+          %b Корзина
+          - if order.present?
+            .ui.red.label{style: 'margin: 0 0 0 2%;'}= order.items.count
+            .ui.label.orange{style: 'margin: 0 2% 0 2%;'}= humanized_money_with_symbol(order.amount)
+            = link_to(order_path(order), class: 'mini ui green button') do
+              %i.shopping.basket.icon
+              Оформить заказ
+            = link_to(order_path(order), method: :delete, remote: true, class: 'mini ui red button') do
+              %i.trash.alternate.outline.icon
+              Очистить
+
+          - else
+            .ui.red.label{style: 'margin: 0 0 0 2%;'}= 0
+            .ui.label.green{style: 'margin: 0 2% 0 2%;'}= humanized_money_with_symbol(Money.new(0))
+            %button.mini.ui.red.button.disabled Оформить заказ

@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
   def determine_categories
     @categories = Category.all
     @items_size = Item.count
+    @current_order = Order.find_by(id: session[:current_order_id])
   end
 
 end

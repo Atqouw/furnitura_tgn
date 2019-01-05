@@ -25,6 +25,7 @@ class Application.Core
     @initializeDropdown($scope)
     @initializeSidebar($scope)
     @initializeSwiper($scope)
+    @setCurrentOrderTokenToLocalStorage($scope)
 
 
   initializeDropdown: ( $scope = $('body') ) =>
@@ -46,4 +47,8 @@ class Application.Core
       loop: true,
       autoplay: true,
     )
+
+  setCurrentOrderTokenToLocalStorage: ( $scope = $('body') ) =>
+    token = $scope.find('#cart-content').data('currentOrderToken')
+    localStorage.setItem('currentOrderToken', token)
 

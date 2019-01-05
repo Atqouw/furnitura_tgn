@@ -1,0 +1,2 @@
+localStorage.removeItem('currentOrderToken')
+$('#cart-content').replaceWith("<%= j( render partial: 'layouts/partials/cart', locals: { order: nil }) %>")

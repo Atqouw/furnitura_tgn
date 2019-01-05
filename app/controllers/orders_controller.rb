@@ -8,10 +8,16 @@ class OrdersController < WebApplicationController
     @order = Order.find_by(token: add_item_to_order_params[:token])
     @order ||= Order.create
 
+    session[:current_order_id] = @order.id
+
     @order.items_orders.create(item: item) if @order.present?
-
     @order.update(amount: @order.items.sum(&:price_with_discount))
+  end
 
+  def destroy
+    if @order.destroy
+      session[:current_order_id] = nil
+    end
   end
 
   private
