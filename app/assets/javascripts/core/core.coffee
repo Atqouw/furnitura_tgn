@@ -35,7 +35,7 @@ class Application.Core
       $('.ui.sidebar').sidebar(overlay: true).sidebar 'toggle'
 
   initializeSwiper: ( $scope = $('body') ) =>
-    new Swiper('.swiper-container',
+    swiper = new Swiper('.swiper-container',
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
@@ -44,6 +44,6 @@ class Application.Core
         el: '.swiper-pagination',
       },
       loop: true,
-      autoplay: true
+      autoplay: true,
     )
 

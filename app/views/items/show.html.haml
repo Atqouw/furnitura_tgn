@@ -1,30 +1,53 @@
--#<<<<<<< HEAD
-.ui.piled.segment
-  .ui.middle.aligned.stackable.grid.container
-    .row
-      .center.aligned.wide.column
-        %h3.ui.header
-          = @item.name
-        .ui.centered.image
-          .center.aligned
-            = image_tag(@item.photo.url)
-        %p.description
-          Характеристики:
-          = @item.description
-        .center.aligned.column
-          - if @item.discount_percent.present?
-            %h4
-              %s= humanized_money_with_symbol(@item.sale_price)
-              .ui.green.label= humanized_money_with_symbol(@item.price_with_discount)
-          - else
-            %h4.ui.green.label= humanized_money_with_symbol(@item.sale_price)
-          .ui.basic.green.button Добавить в корзину
-          .ui.basic.orange.button Купить сейчас
--#=======
--#.ui.container
--#  .ui.grid
--#    .four.wide.column
--#    .twelve.wide.column
--#      %h4.ui.header
--#        = @item.name
--#>>>>>>> added swiper etc.
+-#-#<<<<<<< HEAD
+-#.ui.piled.segment
+-#  .ui.middle.aligned.stackable.grid.container
+-#    .row
+-#      .center.aligned.wide.column
+-#        %h3.ui.header
+-#          = @item.name
+-#        .ui.centered.image
+-#          .center.aligned
+-#            = image_tag(@item.photo.url)
+-#        %p.description
+-#          Характеристики:
+-#          = @item.description
+-#        .center.aligned.column
+-#          - if @item.discount_percent.present?
+-#            %h4
+-#              %s= humanized_money_with_symbol(@item.sale_price)
+-#              .ui.green.label= humanized_money_with_symbol(@item.price_with_discount)
+-#          - else
+-#            %h4.ui.green.label= humanized_money_with_symbol(@item.sale_price)
+-#          .ui.basic.green.button Добавить в корзину
+-#          .ui.basic.orange.button Купить сейчас
+
+
+.swiper-container
+  .swiper-wrapper
+    .swiper-slide{style: "background-image: url(#{@item.photo.url});"}
+    - @item.attachments.each do |attachment|
+      .swiper-slide{style: "background-image: url(#{attachment.attach.url});"}
+  .swiper-pagination
+  .swiper-button-prev
+  .swiper-button-next
+
+.ui.container
+  %br
+  %h2.ui.dividing.header= @item.name
+
+  .ui.grid
+    .ten.wide.column
+      = @item.description
+    .six.wide.column.right.aligned
+      %h2.ui.header.green
+        - if @item.discount_percent.present?
+          .content
+            = humanized_money_with_symbol(@item.price_with_discount)
+            .sub.header
+              %s.red= humanized_money_with_symbol(@item.sale_price)
+        - else
+          = humanized_money_with_symbol(@item.sale_price)
+
+      .ui.basic.green.button Добавить в корзину
+      .ui.basic.orange.button Купить сейчас
+

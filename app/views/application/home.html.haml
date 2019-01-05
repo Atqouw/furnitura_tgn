@@ -7,4 +7,5 @@
     Все товары
   .ui.four.doubling.cards
     = render(partial: 'items/partials/item_card', collection: @items)
+  .ui.divider
   = paginate(@items, theme: 'default')
