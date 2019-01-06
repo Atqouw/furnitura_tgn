@@ -6,3 +6,4 @@
 
 #= require semantic-ui
 #= require swiper
+#= require tinymce

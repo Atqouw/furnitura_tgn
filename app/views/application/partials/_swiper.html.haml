@@ -5,7 +5,7 @@
         .ui.basic.segment.left.aligned
           %h1.ui.header.inverted
             = item.name
-            .sub.header= item.description
+            .sub.header= item.short_description
             %br
             = link_to('ПОДРОБНЕЕ', item_path(item), class: 'ui blue basic button')
   .swiper-pagination

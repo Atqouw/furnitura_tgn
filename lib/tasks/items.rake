@@ -11,7 +11,8 @@ namespace :items do
     is_sell_out = [true, false].sample
     item = Item.new(
       name: Faker::Coffee.origin,
-      description: Faker::Coffee.notes,
+      short_description: Faker::Coffee.notes,
+      full_description:  Faker::Coffee.notes,
       sale_price: [*300..1500].sample,
       remote_photo_url: Faker::Avatar.image,
       categories_items_attributes: [ { category: Category.order("RANDOM()").last } ],

@@ -46,7 +46,8 @@ class ItemsController < WebApplicationController
   def item_params
     params.fetch(:item, {}).permit(
         :name,
-        :description,
+        :short_description,
+        :full_description,
         :show_survey_title,
         :show_survey_description
     )

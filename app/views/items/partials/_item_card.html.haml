@@ -13,7 +13,7 @@
     -#.meta
     -#  %span.date Created in Sep 2014
     .description
-      %p= item_card.description
+      %p= item_card.short_description.truncate_words(10).html_safe
       - if item_card.discount_percent.present?
         %h4
           %s= humanized_money_with_symbol(item_card.sale_price)

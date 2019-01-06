@@ -50,7 +50,8 @@ ActiveRecord::Schema.define(version: 2019_01_05_161522) do
 
   create_table "items", force: :cascade do |t|
     t.string "name", null: false
-    t.string "description"
+    t.string "short_description"
+    t.string "full_description"
     t.string "photo"
     t.integer "sale_price_cents", default: 0, null: false
     t.string "sale_price_currency", default: "RUB", null: false
@@ -72,6 +73,7 @@ ActiveRecord::Schema.define(version: 2019_01_05_161522) do
 
   create_table "orders", force: :cascade do |t|
     t.string "token"
+    t.integer "status", default: 0, null: false
     t.integer "amount_cents", default: 0, null: false
     t.string "amount_currency", default: "RUB", null: false
     t.bigint "customer_id"

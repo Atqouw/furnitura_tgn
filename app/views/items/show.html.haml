@@ -13,7 +13,7 @@
 
   .ui.grid
     .ten.wide.column
-      = @item.description
+      = @item.full_description.html_safe
     .six.wide.column.right.aligned
       %h2.ui.header.green
         - if @item.discount_percent.present?
