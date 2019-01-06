@@ -25,11 +25,9 @@ class Ability
   end
 
   def guest_permissions(user)
+    can %i[destroy read update add_item_to_order], Order
     can :read, Item
     can :read, Category
-    can :add_item_to_order, Order
-    can :read, Order
-    can :destroy, Order
     can :destroy, ItemsOrder
   end
 

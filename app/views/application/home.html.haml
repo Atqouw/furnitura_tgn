@@ -9,3 +9,7 @@
     = render(partial: 'items/partials/item_card', collection: @items)
   .ui.divider
   = paginate(@items, theme: 'default')
+
+  .ui.segment
+    >>>>> Left if needed.
+    %iframe{:frameborder => "0", :height => "400", :src => "https://yandex.ru/map-widget/v1/?um=constructor%3Acf9b58184add05b2ee6d02277b1a17ca94f54c5fe1a6d3d5ed25f29cda61cb9c&source=constructor", :width => "100%"}

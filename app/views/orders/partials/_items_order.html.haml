@@ -18,4 +18,5 @@
               %s.red= humanized_money_with_symbol(items_order.item.sale_price)
         - else
           = humanized_money_with_symbol(items_order.item.sale_price)
-      .ui.label Limited
+      - items_order.item.categories.each do |category|
+        = link_to(category.name, category_items_path(category), class: 'ui label')

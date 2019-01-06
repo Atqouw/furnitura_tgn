@@ -1,0 +1,4 @@
+<% if @order.errors.present? %>
+  $('#edit_order_<%= @order.id %>').replaceWith("<%= j( render(partial: 'orders/partials/buy_form') ) %>");
+<% else %>
+<% end %>

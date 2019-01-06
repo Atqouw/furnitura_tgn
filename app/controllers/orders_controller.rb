@@ -15,6 +15,10 @@ class OrdersController < WebApplicationController
     redirect_to order_path(@order) if params[:with_redirect].present? and params[:with_redirect].eql?('true')
   end
 
+  def update
+    @order.update_attributes(order_params)
+  end
+
   def destroy
     if @order.destroy
       session[:current_order_id] = nil
@@ -25,6 +29,14 @@ class OrdersController < WebApplicationController
 
   def order_params
     params.fetch(:order, {}).permit(
+      :customer_phone,
+      :customer_name,
+      :status,
+      attachments_attributes: [
+          :id,
+          :title,
+          :attach
+      ]
     )
   end
 

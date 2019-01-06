@@ -13,8 +13,9 @@
       .ui.divided.items#cart-order-items
         = render(partial: 'orders/partials/items_order', collection: @order.items_orders)
     .seven.wide.column
-      .ui.placeholder.segment
-        .ui.icon.header
-          %i.pdf.file.outline.icon
-          Вы можете приложить план помещения или другие документы
-        .ui.primary.button Выбрать
+      .ui.segment
+        = render(partial: 'orders/partials/buy_form')
+        -#.ui.icon.header
+        -#  %i.pdf.file.outline.icon
+        -#  Вы можете приложить план помещения или другие документы
+        -#.ui.primary.button Выбрать

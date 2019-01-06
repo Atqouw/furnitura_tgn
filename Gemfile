@@ -29,6 +29,7 @@ gem 'mini_magick'                                                  # A ruby wrap
 gem 'simple_form'
 gem 'kaminari'                                                     # A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for modern web app frameworks and ORMs
 gem 'tinymce-rails'                                                # The tinymce-rails gem integrates the TinyMCE editor with the Rails asset pipeline.
+gem 'cocoon'                                                       # Dynamic nested forms using jQuery made easy; works with formtastic, simple_form or default forms http://github.com/nathanvda/cocoon.
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-swiper'
