@@ -11,7 +11,8 @@ class OrdersController < WebApplicationController
     session[:current_order_id] = @order.id
 
     @order.items_orders.create(item: item) if @order.present?
-    @order.update(amount: @order.items.sum(&:price_with_discount))
+
+    redirect_to order_path(@order) if params[:with_redirect].present? and params[:with_redirect].eql?('true')
   end
 
   def destroy

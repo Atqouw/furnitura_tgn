@@ -1,0 +1,2 @@
+$('#cart-order-items').html("<%= j( render partial: 'orders/partials/items_order', collection: @items_order.order.items_orders) %>")
+$('#cart-content').replaceWith("<%= j( render partial: 'layouts/partials/cart', locals: { order: @items_order.order }) %>")

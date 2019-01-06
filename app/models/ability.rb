@@ -30,6 +30,7 @@ class Ability
     can :add_item_to_order, Order
     can :read, Order
     can :destroy, Order
+    can :destroy, ItemsOrder
   end
 
 end

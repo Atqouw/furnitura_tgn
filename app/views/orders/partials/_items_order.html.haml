@@ -1,0 +1,21 @@
+.item
+  .image
+    = image_tag(items_order.item.photo.url)
+  .content
+    = link_to(items_order.item.name, item_path(items_order.item), class: 'ui left aligned header')
+    = link_to(items_order_path(items_order), method: :delete, remote: true, class: 'ui right floated') do
+      %i.trash.alternate.outline.icon.red
+    .meta
+      %span.cinema= 'Артикул: 87213'
+    .description
+      %p= items_order.item.description
+    .extra
+      %h3.ui.header.green.right.floated
+        - if items_order.item.discount_percent.present?
+          .content
+            = humanized_money_with_symbol(items_order.item.price_with_discount)
+            .sub.header
+              %s.red= humanized_money_with_symbol(items_order.item.sale_price)
+        - else
+          = humanized_money_with_symbol(items_order.item.sale_price)
+      .ui.label Limited

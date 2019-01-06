@@ -23,4 +23,4 @@
 
   .ui.two.bottom.attached.buttons{data: {'class-binder': 'OrderButtons', 'item-id': item_card.id}}
     = link_to('Добавить в корзину', 'javascript:void(0)', class: 'ui basic green button', data: { 'add-to-order': true })
-    = link_to('Купить сейчас', 'javascript:void(0)', class: 'ui basic orange button')
+    = link_to('Купить сейчас', 'javascript:void(0)', class: 'ui basic orange button', data: { 'add-to-order-and-buy': true })

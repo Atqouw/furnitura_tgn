@@ -10,7 +10,7 @@
           - if order.present?
             .ui.red.label{style: 'margin: 0 0 0 2%;'}= order.items.count
             .ui.label.orange{style: 'margin: 0 2% 0 2%;'}= humanized_money_with_symbol(order.amount)
-            = link_to(order_path(order), class: 'mini ui green button') do
+            = link_to(order_path(order), class: "mini ui green button #{order.items.blank? ? 'disabled' : nil }" ) do
               %i.shopping.basket.icon
               Оформить заказ
             = link_to(order_path(order), method: :delete, remote: true, class: 'mini ui red button') do

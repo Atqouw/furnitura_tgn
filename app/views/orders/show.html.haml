@@ -1,0 +1,20 @@
+.ui.container
+
+  .ui.icon.message
+    %i.ruble.sign.icon
+    .content
+      .header
+        Оплата по факту.
+      %p Сделайте заказ и наш менеджен свяжется с Вами.
+
+  .ui.divider
+  .ui.grid
+    .nine.wide.column
+      .ui.divided.items#cart-order-items
+        = render(partial: 'orders/partials/items_order', collection: @order.items_orders)
+    .seven.wide.column
+      .ui.placeholder.segment
+        .ui.icon.header
+          %i.pdf.file.outline.icon
+          Вы можете приложить план помещения или другие документы
+        .ui.primary.button Выбрать

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :items
   resources :users
+  resources :items_orders, only: :destroy
 
   resources :categories do
     resources :items
