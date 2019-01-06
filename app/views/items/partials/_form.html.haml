@@ -2,17 +2,23 @@
 .ui.center.aligned.grid
   .row
     %h2.ui.dividing.black.header Информация о товаре
-  .nine.wide.column.grid
+  .ten.wide.column.grid
 
     .ui.form
       = simple_form_for(@item, remote: true) do |f|
         .field
           .fields
-            .eight.wide.field
+            .twelve.wide.field
               = f.input :name, label:'Название'
             .four.wide.field
+              = f.input :article, label:'Артикль'
+        .field
+          .fields
+            .six.wide.field
               = f.input :sale_price_cents, label:'Цена'
             .four.wide.field
+              = f.input :discount_percent, label:'Скидка в %'
+            .seven.wide.field
               = f.input :photo, label:'Фотография'
           %label Краткое описание
           = f.text_area :short_description, label:'Краткое описание ', rows: 2

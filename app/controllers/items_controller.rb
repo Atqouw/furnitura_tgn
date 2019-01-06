@@ -48,8 +48,12 @@ class ItemsController < WebApplicationController
         :name,
         :short_description,
         :full_description,
+        :sale_price_cents,
+        :discount_percent,
+        :photo,
         :show_survey_title,
-        :show_survey_description
+        :show_survey_description,
+        :article
     )
   end
 

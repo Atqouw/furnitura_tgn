@@ -3,6 +3,7 @@
 #= require jquery.turbolinks
 #= require turbolinks
 #= require ./compatibility
+#= require jquery.remotipart
 
 #= require semantic-ui
 #= require swiper

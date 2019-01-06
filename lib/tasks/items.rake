@@ -14,6 +14,7 @@ namespace :items do
       short_description: Faker::Coffee.notes,
       full_description:  Faker::Coffee.notes,
       sale_price: [*300..1500].sample,
+      article: [*1...4200].sample,
       remote_photo_url: Faker::Avatar.image,
       categories_items_attributes: [ { category: Category.order("RANDOM()").last } ],
       attachments_attributes: [ { remote_attach_url: Faker::Avatar.image } ]

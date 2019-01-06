@@ -30,6 +30,7 @@ gem 'simple_form'
 gem 'kaminari'                                                     # A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for modern web app frameworks and ORMs
 gem 'tinymce-rails'                                                # The tinymce-rails gem integrates the TinyMCE editor with the Rails asset pipeline.
 gem 'cocoon'                                                       # Dynamic nested forms using jQuery made easy; works with formtastic, simple_form or default forms http://github.com/nathanvda/cocoon.
+gem 'remotipart', '~> 1.2'                                         # This gem augments the native Rails jQuery remote form functionality enabling asynchronous file uploads with little to no modification to your application.
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-swiper'

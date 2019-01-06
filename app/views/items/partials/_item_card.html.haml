@@ -1,6 +1,6 @@
 .card{id: "item-#{item_card.id}"}
   .image
-    = image_tag(item_card.photo.url)
+    = image_tag(item_card.photo.url) if item_card.photo?
     - if can? :edit, item_card
       .ui.top.right.attached.label
         .ui.icon.dropdown

@@ -6,6 +6,9 @@ class CreateOrders < ActiveRecord::Migration[5.2]
 
       t.integer :status, null: false, default: 0
 
+      t.string :comment
+
+
       t.monetize :amount
 
       t.references :customer, null: true, forigin_key: true

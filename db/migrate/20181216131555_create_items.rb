@@ -5,6 +5,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
     t.string :short_description
     t.string :full_description
     t.string :photo
+    t.string :article
 
     t.monetize :sale_price
 
