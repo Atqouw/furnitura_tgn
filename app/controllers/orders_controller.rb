@@ -3,14 +3,14 @@ class OrdersController < WebApplicationController
   load_and_authorize_resource :order
 
   def add_item_to_order
-    item = Item.find_by(id: add_item_to_order_params[:item_id])
-    return if item.blank?
+    @item = Item.find_by(id: add_item_to_order_params[:item_id])
+    return if @item.blank?
     @order = Order.find_by(token: add_item_to_order_params[:token])
     @order ||= Order.create
 
-    session[:current_order_id] = @order.id
+    @current_order, session[:current_order_id] = @order, @order.id
 
-    @order.items_orders.create(item: item) if @order.present?
+    @order.items_orders.create(item: @item) if @order.present?
 
     redirect_to order_path(@order) if params[:with_redirect].present? and params[:with_redirect].eql?('true')
   end
@@ -20,8 +20,9 @@ class OrdersController < WebApplicationController
   end
 
   def destroy
+    @order_items_ids = @order.items.ids
     if @order.destroy
-      session[:current_order_id] = nil
+      @current_order, session[:current_order_id] = nil, nil
     end
   end
 

@@ -1,3 +1,8 @@
 localStorage.setItem('currentOrderToken', '<%= @order.token %>')
 
 $('#cart-content').replaceWith("<%= j( render partial: 'layouts/partials/cart', locals: { order: @order }) %>")
+$('#item-<%= @item.id %>').replaceWith("<%= j( render partial: 'items/partials/item_card', object: @item) %>")
+
+if (location.pathname === '/items/<%= @item.id %>') {
+    Turbolinks.visit(location.href)
+}

@@ -6,6 +6,9 @@ class CreateItems < ActiveRecord::Migration[5.2]
     t.string :full_description
     t.string :photo
     t.string :article
+    t.string :meta_description
+    t.string :meta_key_words
+    t.string :page_title
 
     t.monetize :sale_price
 

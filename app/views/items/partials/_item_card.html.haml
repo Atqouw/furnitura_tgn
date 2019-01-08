@@ -21,6 +21,10 @@
       - else
         %h4.ui.green.label= humanized_money_with_symbol(item_card.sale_price)
 
-  .ui.two.bottom.attached.buttons{data: {'class-binder': 'OrderButtons', 'item-id': item_card.id}}
-    = link_to('Добавить в корзину', 'javascript:void(0)', class: 'ui basic green button', data: { 'add-to-order': true })
-    = link_to('Купить сейчас', 'javascript:void(0)', class: 'ui basic orange button', data: { 'add-to-order-and-buy': true })
+  - if @current_order.present? and @current_order.items.where(id: item_card.id).present?
+    .ui.one.bottom.attached.buttons
+      = link_to('Товар в корзине', order_path(@current_order), class: 'ui basic green button', data: { 'add-to-order': true })
+  - else
+    .ui.two.bottom.attached.buttons{data: {'class-binder': 'OrderButtons', 'item-id': item_card.id}}
+      = link_to('Добавить в корзину', 'javascript:void(0)', class: 'ui basic green button', data: { 'add-to-order': true })
+      = link_to('Купить сейчас', 'javascript:void(0)', class: 'ui basic orange button', data: { 'add-to-order-and-buy': true })

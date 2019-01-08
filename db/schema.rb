@@ -28,6 +28,9 @@ ActiveRecord::Schema.define(version: 2019_01_05_161522) do
   create_table "categories", force: :cascade do |t|
     t.string "name", null: false
     t.string "code", null: false
+    t.string "meta_description"
+    t.string "meta_key_words"
+    t.string "page_title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -55,6 +58,9 @@ ActiveRecord::Schema.define(version: 2019_01_05_161522) do
     t.string "full_description"
     t.string "photo"
     t.string "article"
+    t.string "meta_description"
+    t.string "meta_key_words"
+    t.string "page_title"
     t.integer "sale_price_cents", default: 0, null: false
     t.string "sale_price_currency", default: "RUB", null: false
     t.float "discount_percent"
@@ -75,8 +81,10 @@ ActiveRecord::Schema.define(version: 2019_01_05_161522) do
 
   create_table "orders", force: :cascade do |t|
     t.string "token"
+    t.string "customer_phone"
+    t.string "customer_name"
+    t.text "comment"
     t.integer "status", default: 0, null: false
-    t.string "comment"
     t.integer "amount_cents", default: 0, null: false
     t.string "amount_currency", default: "RUB", null: false
     t.bigint "customer_id"

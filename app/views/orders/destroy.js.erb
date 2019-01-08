@@ -1,2 +1,7 @@
+<% @order_items_ids.each do |item_id| %>
+  $('#item-<%= item_id %>').replaceWith("<%= j( render partial: 'items/partials/item_card', object: Item.find(item_id)) %>")
+  new Application.Classes.OrderButtons($('#item-<%= item_id %>').find('.attached.buttons'))
+<% end %>
+
 localStorage.removeItem('currentOrderToken')
 $('#cart-content').replaceWith("<%= j( render partial: 'layouts/partials/cart', locals: { order: nil }) %>")

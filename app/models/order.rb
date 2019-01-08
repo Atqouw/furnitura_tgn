@@ -6,8 +6,6 @@ class Order < ApplicationRecord
 
   monetize :amount_cents
 
-  attr_accessor :customer_phone, :customer_name
-
   belongs_to :customer, optional: true
 
   has_many :items_orders, dependent: :destroy

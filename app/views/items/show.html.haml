@@ -24,6 +24,11 @@
         - else
           = humanized_money_with_symbol(@item.sale_price)
 
-      .ui.basic.green.button Добавить в корзину
-      .ui.basic.orange.button Купить сейчас
+      - if @current_order.present? and @current_order.items.where(id: @item.id).present?
+        = link_to('Товар в корзине', order_path(@current_order), class: 'ui basic green button', data: { 'add-to-order': true })
+      - else
+        %div{data: {'class-binder': 'OrderButtons', 'item-id': @item.id}}
+          = link_to('Добавить в корзину', 'javascript:void(0)', class: 'ui basic green button', data: { 'add-to-order': true })
+          = link_to('Купить сейчас', 'javascript:void(0)', class: 'ui basic orange button', data: { 'add-to-order-and-buy': true })
+
 
